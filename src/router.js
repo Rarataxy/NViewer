@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Library from './views/Library.vue'
+import RecentlyRead from './views/RecentlyRead.vue'
+import Downloaded from './views/Downloaded.vue'
+import Settings from './views/Settings.vue'
+import Search from './views/Search.vue'
 
 Vue.use(Router)
 
@@ -8,16 +12,30 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'Library',
+      component: Library
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/recentlyread',
+      name: 'RecentlyRead',
+      component: RecentlyRead
+    },
+    {
+      path: '/downloaded',
+      name: 'Downloaded',
+      component: Downloaded
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
-  ]
+  ],
+  linkActiveClass: "active",
+  linkExactActiveClass: "exact-active",
 })
